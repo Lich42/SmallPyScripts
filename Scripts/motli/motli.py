@@ -4,18 +4,18 @@
 
 import datetime
 
-file = open('motivation.txt', 'r')
-print(file.read())
+file = open('motivation.txt', 'r') #Opens the document in read mode
+print(file.read()) #Prints the contents of motivation.txt
 
-uDid = input('What did you do? (ex = exit, cl = clear) ').lower()
+uDid = input('What did you do today? (ex = exit, cl = clear) ').lower()
 
 if uDid == 'cl':
-	open('motivation.txt', 'w').close()
+	open('motivation.txt', 'w').close() #Clears the document
 elif uDid == 'ex':
-	quit()
+	quit() #Exits the script
 else:
-	date = str(datetime.datetime.now())
-	did  = date+': '+uDid
+	date = str(datetime.datetime.now()) #Gets the current date/time
+	did  = date+': '+uDid #Mashes the date/time and user-defined action together
 
-	file = open('motivation.txt', 'a')
-	file.write(did+'\n')
+	file = open('motivation.txt', 'a') #Opens the document in append mode
+	file.write(did+'\n') #Pastes the user's action into the document then adds a new blank line
